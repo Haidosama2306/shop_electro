@@ -114,17 +114,67 @@ function Header() {
                 Search
               </button>
               <div className={styles.order_cart}>
-                <FaHistory style={{fontSize:26,position:"absolute", right:450, top: 20}}/>
-                <p style={{position:"absolute", right: 420, top: 50}}>Order History</p>
-
-                <FaShoppingCart style={{fontSize:26,position:"absolute", right:350, top: 20}}/>
-                <a style={{position:"absolute", right: 350, top: 50}}>Cart</a>
-              </div>              
+                <FaHistory
+                  style={{
+                    fontSize: 26,
+                    position: "absolute",
+                    right: 450,
+                    top: 20,
+                  }}
+                />
+                <p style={{ position: "absolute", right: 420, top: 50 }}>
+                  Order History
+                </p>
+              </div>
+              <div className={styles.order_cart}>
+                <FaShoppingCart
+                  style={{
+                    fontSize: 26,
+                    position: "absolute",
+                    right: 350,
+                    top: 20,
+                  }}
+                />
+                <a style={{ position: "absolute", right: 350, top: 50 }}>
+                  Cart
+                </a>
+              </div>
             </div>
           </div>
         </nav>
       </header>
-      <section></section>
+
+      <section>
+        <div className={`card text-center ${styles.Navigation}`}>
+          <div className="container">
+            <ul className="nav">
+              <li className="nav-item">
+                <a
+                  className={`${styles.cate_item}  + ${styles.active}`}
+                  href="#"
+                >
+                  Category 1
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className={`${styles.cate_item}`} href="#">
+                  Category 2
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className={`${styles.cate_item}`} href="#">
+                  Category 3
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className={`${styles.cate_item}`} href="#">
+                  Category 4
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
