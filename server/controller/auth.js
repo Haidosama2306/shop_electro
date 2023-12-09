@@ -47,26 +47,25 @@ export const login = async (req, res) => {
 };
 
 export const register = async (req, res) => {
-    const { username, password, confirmpassword } = req.body;
-
-    console.log('req.body: ',req.body);
+    const { username, password } = req.body;
     const validator = []
 
     if (validate.isEmpty(username)) {
         validator.push({username: 'Vui lòng không bỏ trống username'})
-    }else if(validate.isLength(username,{min: 5, max:32})){
+    }else if(!validate.isLength(username,{min: 5, max:32})){
         validator.push({username:'Vui lòng tạo username từ 5 đến 32 kí tự'})
+    }else if (/\s/.test(username)) {
+      validator.push({ username: 'Username không được chứa khoảng trắng' });
     }
 
     if(validate.isEmpty(password)) {
         validator.push({password: 'Vui lòng không bỏ trống password'})
-    }else if(validate.isLength(password,{min: 5, max:32})) {
+    }else if(!validate.isLength(password,{min: 5, max:32})) {
         validator.push({password:'Vui lòng tạo password từ 5 đến 32 kí tự'})
-    }else if(password == confirmpassword){
-      validator.push({confirmpassword: 'Password không khớp nhau'})
     }
 
     const user = await UserModel.findOne({ username: username });
+
     if (user) {
         validator.push({ username: 'Username đã tồn tại!' });
     }
@@ -109,7 +108,6 @@ export const checkLogin =  (req, res)=>{
   try {
     return res.status(200).json(true) 
   } catch (error) {
-    return        res.status(401).json(false) 
-
+    return  res.status(401).json(false) 
   }
 }

@@ -1,0 +1,97 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    border-bottom: 3px solid red;
+}
+
+/* Top Navbar */
+.top_content {
+    background: #000;
+    height: 40px;
+}
+
+.top_content ul li{
+    display: inline-block;
+    font-size: 12px;
+}
+.top_content span {
+    line-height: 10px;
+}
+
+.top_content .icon {
+    color: red;
+    font-size: 20px;
+}
+.top_content span:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(206, 14, 14);
+}
+
+/* Main NavBar */
+nav {
+    position: relative;
+    background: #000000b4;
+    font-size: 16px;
+}
+nav h2 {
+    color: #fff;
+    font-weight: 700;
+}
+.collapse {
+    padding: 0 100px;
+}
+
+.categories_dropdown {
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+    background: #fff;
+    padding: 9.5px 40px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+.categories_dropdown:hover {
+    text-decoration: none;
+    color: #000;
+}
+.categories_dropdown_item {
+    width: 185px;
+    border-radius: 0;
+}
+.categories_dropdown_item a {
+    text-align: center;
+}
+.categories_dropdown_item a:hover {
+    background: #000000b4;
+    color: #fff;
+}
+.categories_input {
+    width: 300px;
+    height: 42px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    border-left: 2px solid #00000091;
+    border-right: 2px solid #00000091;
+}
+.categories_btn_submit {
+    width: 150px;
+    height: 42px;
+    background: red;
+    color: white;
+    border: none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.order_cart {
+    color: #fff;
+}
+.order_cart p, 
+.order_cart a{
+    font-size: 12px;
+}

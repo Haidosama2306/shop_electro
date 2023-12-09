@@ -1,7 +1,7 @@
 function HomePage() {
 
     return (
-        <div>
+        <div className="container">
             <h1>Đây là HomePage</h1>
         </div>
     );

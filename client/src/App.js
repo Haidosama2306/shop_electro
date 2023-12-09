@@ -2,9 +2,6 @@ import { RouterProvider } from 'react-router-dom'
 import { router } from './router/index';
 import { authrouter } from './router/auth';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
-import Login from './auth/Login';
 import axios from 'axios';
 
 function App() {
@@ -25,7 +22,6 @@ function App() {
     .catch(()=>{
       setLogin(false)
     })
-    console.log(isLoggedIn);
     if (!isLoggedIn) {
     }
   },[isLoggedIn])
