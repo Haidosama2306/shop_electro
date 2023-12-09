@@ -1,0 +1,36 @@
+.footer {
+    position: -webkit-sticky;
+    background: #000;
+    color: #fff;
+    width: 100vw;
+    bottom: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.email_input {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+.email_btn {
+    width: 200px;
+    height: 51px;
+    background:rgb(206, 14, 14);
+    color: #fff;
+    border: none;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.information{
+    text-align: left;
+    padding: 40px;
+}
+.information h5 {
+    border-bottom: 2px solid #fff;
+}
