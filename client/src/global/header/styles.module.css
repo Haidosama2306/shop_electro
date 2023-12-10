@@ -10,7 +10,7 @@ header {
 
 /* Top Navbar */
 .top_content {
-    background: #000;
+    background: #000000d7;
     height: 40px;
 }
 
@@ -37,8 +37,9 @@ header {
 /* Main NavBar */
 nav {
     position: relative;
-    background: #000000b4;
+    background: #000;
     font-size: 16px;
+    height: 75px;
 }
 
 nav h2 {
@@ -92,7 +93,7 @@ nav h2 {
 .categories_btn_submit {
     width: 150px;
     height: 42px;
-    background: red;
+    background: #D10024;
     color: white;
     border: none;
     border-top-right-radius: 25px;
@@ -119,23 +120,41 @@ nav h2 {
     height: 70px;
     border: none;
     border-radius: 0;
-    border-bottom: 1px solid #00000050;
+    background: #FFF;
+    border-bottom: 2px solid #E4E7ED;
+    border-top: 3px solid #D10024;
 }
-
-.cate_item {
+.Navigattion_ul .cate_item {
     text-decoration: none;
-    color: black;
-    padding: 10px 40px;
-    font-size: 16px;
-    font-weight: 600;
+    color: #000;   
 }
+.Navigattion_ul>li+li {
+    margin-left: 50px
+}
+.Navigattion_ul>li>a {
+    padding: 20px 0px;
+}
+.Navigattion_ul>li>a:hover,
+.Navigattion_ul>li>a:focus,
+.Navigattion_ul>li.active>a {
+    color: #D10024;
+    background-color: transparent;
+}
+.Navigattion_ul>li>a:after {
+    content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #D10024;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+.Navigattion_ul>li>a:hover:after,
+.Navigattion_ul>li>a:focus:after, 
+.Navigattion_ul>li.active>a:after {
+    width: 100%;
+  }
 
-.cate_item:hover {
-    color: #000;
-    text-decoration: none;
+/* .active {
     border-bottom: 2px solid red;
-}
-
-.active {
-    border-bottom: 2px solid red;
-}
+} */
