@@ -16,7 +16,6 @@ function LoginPage() {
     dispatch(login.loginRequest(data));
   }, [data, dispatch]);
 
-  // console.log('data: ',data);
 
   useEffect(() => {
     if (selector.auth || localStorage.getItem("auth_token")) {
