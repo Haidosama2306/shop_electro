@@ -147,8 +147,8 @@ function Header() {
       <section>
         <div className={`card text-center ${styles.Navigation}`}>
           <div className="container">
-            <ul className="nav">
-              <li className="nav-item">
+            <ul className={`main-nav nav + ${styles.Navigattion_ul}`}>
+              <li className="">
                 <a
                   className={`${styles.cate_item}  + ${styles.active}`}
                   href="#"
@@ -156,17 +156,17 @@ function Header() {
                   Category 1
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="">
                 <a className={`${styles.cate_item}`} href="#">
                   Category 2
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="">
                 <a className={`${styles.cate_item}`} href="#">
                   Category 3
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="">
                 <a className={`${styles.cate_item}`} href="#">
                   Category 4
                 </a>
