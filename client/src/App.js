@@ -1,8 +1,11 @@
-import { RouterProvider } from 'react-router-dom'
-import { router } from './router/index';
-import { authrouter } from './router/auth';
+import { Route, Routes } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import LoginPage from "./auth/Login";
+import RegisterPage from "./auth/Register";
+import RootPage from "./global/root";
+import HomePage from "./pages/Home";
+import DetailPage from "./pages/Detail";
 
 function App() {
   const [isLoggedIn, setLogin]=useState(false)
@@ -27,7 +30,20 @@ function App() {
   },[isLoggedIn])
   
   return (
-    <RouterProvider router={isLoggedIn? router : authrouter} />
+    <Routes>
+      {isLoggedIn?(
+        <Route element={<RootPage />} path="/">
+        <Route element={<HomePage />} path=""/>
+        <Route element={<HomePage />} path="/home"/>
+        <Route element={<DetailPage />} path="/detail" />
+      </Route>
+      ):(
+        <Route path="/">
+            <Route element={<LoginPage />} path="/"/>
+            <Route element={<RegisterPage />} path="/register" />
+          </Route>
+      )}
+    </Routes>
   );
 }
 
