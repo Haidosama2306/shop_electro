@@ -1,0 +1,82 @@
+#hot_deal.section {
+    padding: 60px 0px;
+    margin: 30px 20px;
+    height: 500px;
+    background-color: #E4E7ED;
+    background-image: url('https://www.asus.com/events/eventes/epic/3673_1900.jpg');
+}
+
+.hot_deal {
+    text-align: center;
+}
+
+.hot_deal .hot_deal_countdown {
+    margin-bottom: 30px;
+}
+
+.hot_deal .hot_deal_countdown>li {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: #D10024e6;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0px 5px;
+}
+
+.hot_deal .hot_deal_countdown>li>div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.hot_deal .hot_deal_countdown>li>div h3 {
+    color: #FFF;
+    margin-bottom: 0px;
+}
+
+.hot_deal .hot_deal_countdown>li>div span {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #FFF;
+}
+.hot_deal .hot_deal_countdown>li>div span:hover {
+    text-decoration: none;
+}
+
+.hot_deal h2 {
+    font-weight: 700;
+    color: #fff;
+    filter: drop-shadow(2px 0px 5px #D10024e6);
+}
+
+.hot_deal p {
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #E4E7ED;
+    font-weight: 600;
+    filter: drop-shadow(2px 0px 5px #D10024e6);
+}
+
+.hot_deal .cta_btn {
+    padding: 10px 40px;
+    background: #ef233c;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 3px solid transparent;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+.hot_deal .cta_btn:hover {
+    background-color: #FFF;
+    color: #D10024;
+    border-color: #D10024;
+}
