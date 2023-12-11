@@ -46,6 +46,12 @@ nav h2 {
     color: #fff;
     font-weight: 700;
 }
+.logo_banner h2 span {
+    color: #D10024;
+}
+.logo_banner :hover {
+    text-decoration: none;
+}
 
 .collapse {
     padding: 0 100px;

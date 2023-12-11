@@ -5,6 +5,11 @@ import { IoIosMail, IoMdPerson } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
 
 function Header() {
+  const handleLogout = ()=>{
+    localStorage.removeItem('auth_token')
+    localStorage.removeItem('auth_user')
+    window.location.href='/'
+  }
   return (
     <div>
       <header>
@@ -46,6 +51,7 @@ function Header() {
                 className="nav-link"
                 href="#"
                 style={{ position: "absolute", right: 300 }}
+                onClick={handleLogout}
               >
                 <IoMdPerson className={styles.icon} />
                 <span> Log out</span>
@@ -56,8 +62,8 @@ function Header() {
 
         <nav className={"navbar navbar-expand-lg"}>
           <div className="container">
-            <a className="navbar-brand" href="#">
-              <h2>Electro<span style={{color:"red"}}>Shop</span>.</h2>
+            <a className={`${styles.logo_banner} + navbar-brand`} href="#">
+              <h2>Electro<span>Shop</span>.</h2>
             </a>
             <button
               className="navbar-toggler"

@@ -19,7 +19,6 @@ function App() {
 };
     axios.post('http://localhost:5000/auth/checkLogin',{}, {headers: headers})
     .then((check)=>{
-      console.log(check);
       setLogin(true)
     })
     .catch(()=>{
