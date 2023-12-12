@@ -7,8 +7,7 @@ import validate from "validator";
 export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
-
-    console.log('req.body: ',req.body);
+    
     const validator = [];
     if (validate.isEmpty(username)) {
       validator.push({ username: "Vui lòng không bỏ trống username" });

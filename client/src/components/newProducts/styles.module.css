@@ -50,6 +50,7 @@
 .product .product_body {
     position: relative;
     padding: 15px;
+    height: 150px;
     background-color: #FFF;
     text-align: center;
     z-index: 20;
