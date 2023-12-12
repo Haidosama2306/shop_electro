@@ -8,7 +8,7 @@ function FeatureProduct({ products }) {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     speed: 3000,
@@ -25,7 +25,7 @@ function FeatureProduct({ products }) {
               <div key={product}>
                 <div className={styles.product}>
                   <div className={`${styles.product_img}`}>
-                    <img src={product.src} alt={product.nameProduct} />
+                    <img src={product.product_img} alt={product.product_name} />
                     <div className={`${styles.product_label}`}>
                       <span className={`${styles.new}`}>NEW</span>
                     </div>
@@ -36,9 +36,9 @@ function FeatureProduct({ products }) {
                       {product.category}
                     </p>
                     <h3 className={styles.product_name}>
-                      {product.nameProduct}
+                      {product.product_name}
                     </h3>
-                    <h4 className={styles.product_price}>{product.price}</h4>
+                    <h4 className={styles.product_price}>{product.product_price}</h4>
                     <div className={styles.product_rating}>
                       <FaStar className={styles.rate_icon} />
                       <FaStar className={styles.rate_icon} />

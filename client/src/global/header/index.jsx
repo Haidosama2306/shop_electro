@@ -3,6 +3,8 @@ import styles from "./styles.module.css";
 import { FaPhoneAlt, FaShoppingCart, FaHistory } from "react-icons/fa";
 import { IoIosMail, IoMdPerson } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
+import Navigation from "../../components/Navigations";
+import { categories } from "../../commom/data/catelories";
 
 function Header() {
   const handleLogout = ()=>{
@@ -98,15 +100,14 @@ function Header() {
                     className={`dropdown-menu + ${styles.categories_dropdown_item}`}
                     aria-labelledby="navbarDropdown"
                   >
-                    <a className="dropdown-item" href="#">
-                      value 1
-                    </a>
-                    <a className="dropdown-item" href="#">
-                      value 2
-                    </a>
-                    <a className="dropdown-item" href="#">
-                      value 3
-                    </a>
+                    {categories.map((categorie,i)=>{
+                      return (
+                        <a key={categorie} className="dropdown-item" href="#">
+                        {categorie.categories_name}
+                      </a>
+                      )
+                    })}
+                   
                   </div>
                 </li>
               </ul>
@@ -151,35 +152,7 @@ function Header() {
       </header>
 
       <section>
-        <div className={`card text-center ${styles.Navigation}`}>
-          <div className="container">
-            <ul className={`main-nav nav + ${styles.Navigattion_ul}`}>
-              <li className="">
-                <a
-                  className={`${styles.cate_item}  + ${styles.active}`}
-                  href="#"
-                >
-                  Category 1
-                </a>
-              </li>
-              <li className="">
-                <a className={`${styles.cate_item}`} href="#">
-                  Category 2
-                </a>
-              </li>
-              <li className="">
-                <a className={`${styles.cate_item}`} href="#">
-                  Category 3
-                </a>
-              </li>
-              <li className="">
-                <a className={`${styles.cate_item}`} href="#">
-                  Category 4
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+       <Navigation navigations={categories}/>
       </section>
     </div>
   );
