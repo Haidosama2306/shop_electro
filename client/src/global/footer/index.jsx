@@ -1,4 +1,5 @@
 import styles from "./styles.module.css";
+import { IoIosMail } from "react-icons/io";
 
 function Footer() {
   return (
@@ -17,7 +18,7 @@ function Footer() {
             required
           />
           <button name="submit-newsletter" className={styles.email_btn}>
-            <i class="fa fa-envelope"></i> Subscribe
+            <IoIosMail style={{width:20,height:20}}/> Subscribe
           </button>
         </div>
         <div className={styles.information}>

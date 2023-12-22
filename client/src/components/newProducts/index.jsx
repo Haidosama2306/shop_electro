@@ -13,6 +13,7 @@ function NewProducts({ products }) {
     speed: 3000,
     autoplaySpeed: 1000,
     cssEase: "linear",
+    arrows: false
   };
   return (
     <div className='container'>

@@ -1,6 +1,7 @@
 export const Laptop = [
     {
       id: 1,
+      product_cate: 'Asus',
       product_name: "Laptop Asus Vivobook X415EA i3",
       product_img:
         "https://product.hstatic.net/200000722513/product/76kg_1433e407838944df88bd906b57729c0a_1024x1024.png",
@@ -13,6 +14,7 @@ export const Laptop = [
     },
     {
       id: 2,
+      product_cate: 'Asus',
       product_name: "Laptop gaming ASUS TUF",
       product_img:
         "https://product.hstatic.net/200000722513/product/lp520w_dfddfcf4a46d43e4b82391209328e195_large_7fa59a1a8ef14c37b78bc34161b45a87_1024x1024.png",
@@ -25,6 +27,7 @@ export const Laptop = [
     },
     {
       id: 3,
+      product_cate: 'Msi',
       product_name: "Laptop gaming MSI GF63",
       product_img:
         "https://product.hstatic.net/200000722513/product/gf63-final_6ce8b15400404b2baf9632d843a2c4c7_1024x1024.png",
@@ -37,6 +40,7 @@ export const Laptop = [
     },
     {
       id: 4,
+      product_cate: 'Asus',
       product_name: "Laptop ASUS Vivobook 16",
       product_img:
         "https://product.hstatic.net/200000722513/product/m1605ya-mb303w_c739edbf43824f9fbde540809f5c476f_1024x1024.png",
@@ -49,6 +53,7 @@ export const Laptop = [
     },
     {
       id: 5,
+      product_cate: 'Asus',
       product_name: "Laptop Asus ZenBook Flip OLED",
       product_img:
         "https://product.hstatic.net/200000722513/product/kn039-038w_1f813f55348341e7a0a257e1d7f2128b_1024x1024.png",

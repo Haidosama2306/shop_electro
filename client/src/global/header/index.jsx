@@ -1,5 +1,7 @@
 import styles from "./styles.module.css";
-// import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 import { FaPhoneAlt, FaShoppingCart, FaHistory } from "react-icons/fa";
 import { IoIosMail, IoMdPerson } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
@@ -7,11 +9,30 @@ import Navigation from "../../components/Navigations";
 import { categories } from "../../commom/data/catelories";
 
 function Header() {
-  const handleLogout = ()=>{
-    localStorage.removeItem('auth_token')
-    localStorage.removeItem('auth_user')
-    window.location.href='/'
-  }
+  const [isLogin, setLogin] = useState(false);
+
+  useEffect(() => {
+    const bearerToken = localStorage.getItem("auth_token");
+    const headers = {
+      Authorization: `Bearer ${bearerToken}`,
+      "Content-Type": "application/json",
+    };
+    axios
+      .post("http://localhost:5000/auth/checkLogin", {}, { headers: headers })
+      .then((check) => {
+        setLogin(true);
+      })
+      .catch(() => {
+        setLogin(false);
+      });
+    console.log('isLogin: ' , isLogin);
+  }, [isLogin]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("auth_token");
+    localStorage.removeItem("auth_user");
+    window.location.href = "/";
+  };
   return (
     <div>
       <header>
@@ -39,7 +60,7 @@ function Header() {
                 <li className="nav-item">
                   <a className="nav-link" href="#">
                     <IoIosMail className={styles.icon} />
-                    <span>nguyenvanA@mail.com</span>
+                    <span>ElectroShop@mail.com</span>
                   </a>
                 </li>
                 <li className="nav-item">
@@ -49,15 +70,26 @@ function Header() {
                   </a>
                 </li>
               </ul>
-              <a
-                className="nav-link"
-                href="#"
-                style={{ position: "absolute", right: 300 }}
-                onClick={handleLogout}
-              >
-                <IoMdPerson className={styles.icon} />
-                <span> Log out</span>
-              </a>
+              {isLogin ? (
+                <a
+                  className="nav-link"
+                  href="#"
+                  style={{ position: "absolute", right: 300 }}
+                  onClick={handleLogout}
+                >
+                  <IoMdPerson className={styles.icon} />
+                  <span> Log out</span>
+                </a>
+              ) : (
+                <Link
+                  className="nav-link"
+                  style={{ position: "absolute", right: 300 }}
+                  to="/login"
+                >
+                  <IoMdPerson className={styles.icon} />
+                  <span> Login</span>
+                </Link>
+              )}
             </div>
           </div>
         </nav>
@@ -65,7 +97,9 @@ function Header() {
         <nav className={"navbar navbar-expand-lg"}>
           <div className="container">
             <a className={`${styles.logo_banner} + navbar-brand`} href="#">
-              <h2>Electro<span>Shop</span>.</h2>
+              <h2>
+                Electro<span>Shop</span>.
+              </h2>
             </a>
             <button
               className="navbar-toggler"
@@ -100,14 +134,13 @@ function Header() {
                     className={`dropdown-menu + ${styles.categories_dropdown_item}`}
                     aria-labelledby="navbarDropdown"
                   >
-                    {categories.map((categorie,i)=>{
+                    {categories.map((categorie, i) => {
                       return (
                         <a key={categorie} className="dropdown-item" href="#">
-                        {categorie.categories_name}
-                      </a>
-                      )
+                          {categorie.categories_name}
+                        </a>
+                      );
                     })}
-                   
                   </div>
                 </li>
               </ul>
@@ -152,7 +185,7 @@ function Header() {
       </header>
 
       <section>
-       <Navigation navigations={categories}/>
+        <Navigation navigations={categories} />
       </section>
     </div>
   );
