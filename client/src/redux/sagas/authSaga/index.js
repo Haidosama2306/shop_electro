@@ -8,6 +8,7 @@ function* loginSaga(action) {
     const token = yield call(api.fetchLogin, action.payload);
     localStorage.setItem('auth_token', token.data.token)
     localStorage.setItem('auth_user', token.data.user)
+    // console.log('token.data.user: ', token.data.user);
     yield put(authAction.login.loginSuccess(token.data.token));
   } catch (error) {
     yield put(authAction.login.loginFailure(error));
