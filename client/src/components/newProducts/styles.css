@@ -69,6 +69,9 @@
 
 .product .product_body .product_name>a {
     font-weight: 700;
+    text-decoration: none;
+    color: #1e1f29;
+    cursor: pointer;
 }
 
 .product .product_body .product_name>a:hover,

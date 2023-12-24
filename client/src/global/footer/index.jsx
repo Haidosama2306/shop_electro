@@ -1,9 +1,9 @@
-import styles from "./styles.module.css";
+import "./styles.css";
 import { IoIosMail } from "react-icons/io";
 
 function Footer() {
   return (
-    <div className={styles.footer}>
+    <div className="footer">
       <div className="container">
         <div className="newsletter" style={{ paddingTop: 20 }}>
           <p style={{ fontSize: 28 }}>
@@ -12,16 +12,16 @@ function Footer() {
         </div>
         <div className={""}>
           <input
-            className={styles.email_input}
+            className="email_input"
             type="email"
             placeholder="Enter Your Email"
             required
           />
-          <button name="submit-newsletter" className={styles.email_btn}>
+          <button name="submit-newsletter" className="email_btn">
             <IoIosMail style={{width:20,height:20}}/> Subscribe
           </button>
         </div>
-        <div className={styles.information}>
+        <div className="information">
         <div className="row">
           <div className="col-md-4">
             <h5>About me</h5>

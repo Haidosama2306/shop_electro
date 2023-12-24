@@ -1,16 +1,16 @@
-import styles from "./styles.module.css";
+import "./styles.css";
 
 function Feature_Laptop({ products }) {
   return (
-    <div className={styles.Feature_Laptop}>
+    <div className="Feature_Laptop">
         {products &&
           products.map((product, i) => {
             return (
-              <div key={product.id} className={styles.card_content}>
+              <div key={product.id} className="card_content">
 
                 <div className="row">
                   <div className="col-3">
-                    <div className={styles.product_img}>
+                    <div className="product_img">
                       <img
                         src={product.product_img}
                         alt={product.product_name}
@@ -18,14 +18,14 @@ function Feature_Laptop({ products }) {
                     </div>
                   </div>
                   <div className="col-9">
-                    <div className={styles.card_body}>
-                      <p className={styles.product_cate}>
+                    <div className="card_body">
+                      <p className="product_cate">
                         {product.product_cate}
                       </p>
                       <button
-                        className={styles.product_name}
+                        className="product_name"
                       >{`${product.product_name.slice(0, 20)} [...]`}</button>
-                      <p className={styles.product_price}>
+                      <p className="product_price">
                         {product.product_price}
                       </p>
                     </div>

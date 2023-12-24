@@ -1,24 +1,11 @@
-import styles from './styles.module.css'
-import { useEffect, useState } from 'react'
+import  './styles.css'
 
 function HotDeal() {
-    const [secs, setSecs] = useState(59000);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setSecs(secs - 1000);
-          // Cập nhật thời gian đếm ngược ra màn hình
-          const secCDown = secs / 1000;
-          document.querySelector('.secs').textContent = `${secCDown}`;
-        }, 1000);
     
-        return () => clearInterval(interval);
-      }, []);
-
     return (
-        <div className={styles.section} id={styles.hot_deal}>
-            <div className={styles.hot_deal}>
-                <ul className={styles.hot_deal_countdown}>
+        <div className="section">
+            <div className="hot_deal">
+                <ul className="hot_deal_countdown">
                     <li>
                         <div>
                             <h3>00</h3>
@@ -39,14 +26,14 @@ function HotDeal() {
                     </li>
                     <li>
                         <div>
-                            <h3 className='secs'></h3>
+                            <h3 >00</h3>
                             <span>Secs</span>
                         </div>
                     </li>
                 </ul>
                 <h2 className="text-uppercase">hot deal this week</h2>
                 <p>New Collections Up to 50% OFF</p>
-                <a href="#" className={`primary-btn + ${styles.cta_btn}`}>Shop now</a>
+                <a href="#" className="primary-btn cta_btn">Shop now</a>
             </div>
         </div>
     )
