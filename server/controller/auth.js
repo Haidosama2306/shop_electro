@@ -30,7 +30,7 @@ export const login = async (req, res) => {
 
           jwt.sign(payload, "abc-xyz", { expiresIn: 7200 }, (err, token) => {
             if (err) throw err;
-            return res.json({ success: true, token: token, user: user._id });
+            return res.json({ success: true, token: token, user: user._id , username: user.username});
           });
         } else {
           return res
@@ -92,7 +92,7 @@ export const register = async (req, res) => {
                 jwt.sign(payload, 'abc-xyz', { expiresIn: 3600 }, (err, token) => {
                     if (err) throw err;
 
-                    return res.json({ success: true, token: token, user: savedUser._id });
+                    return res.json({ success: true, token: token, user: savedUser._id , username: savedUser.username});
                 })
                 
             } catch (error) {

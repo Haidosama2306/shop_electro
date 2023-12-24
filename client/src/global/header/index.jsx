@@ -1,4 +1,4 @@
-import styles from "./styles.module.css";
+import "./styles.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -24,19 +24,24 @@ function Header() {
       })
       .catch(() => {
         setLogin(false);
+        localStorage.removeItem("auth_token");
+        localStorage.removeItem("auth_user");
+        localStorage.removeItem("auth_name");
       });
-    console.log('isLogin: ' , isLogin);
+    console.log("isLogin: ", isLogin);
   }, [isLogin]);
 
   const handleLogout = () => {
     localStorage.removeItem("auth_token");
     localStorage.removeItem("auth_user");
+    localStorage.removeItem("auth_name");
     window.location.href = "/";
   };
+  
   return (
     <div>
       <header>
-        <nav className={`navbar navbar-expand-lg + ${styles.top_content}`}>
+        <nav className="navbar navbar-expand-lg top_content">
           <div className="container">
             <button
               className="navbar-toggler"
@@ -53,40 +58,48 @@ function Header() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    <FaPhoneAlt className={styles.icon} />
+                    <FaPhoneAlt className="icon" />
                     <span>+84 123456789</span>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    <IoIosMail className={styles.icon} />
+                    <IoIosMail className="icon" />
                     <span>ElectroShop@mail.com</span>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    <FaLocationDot className={styles.icon} />
+                    <FaLocationDot className="icon" />
                     <span>123 phố Wall</span>
                   </a>
                 </li>
               </ul>
               {isLogin ? (
-                <a
-                  className="nav-link"
-                  href="#"
-                  style={{ position: "absolute", right: 300 }}
-                  onClick={handleLogout}
-                >
-                  <IoMdPerson className={styles.icon} />
-                  <span> Log out</span>
-                </a>
+                <>
+                  <span
+                    style={{ position: "absolute", right: 450, paddingTop: 2 }}
+                  >
+                    {localStorage.getItem("auth_name")}
+                  </span>
+                  <a
+                    className="nav-link"
+                    href="#"
+                    style={{ position: "absolute", right: 300 }}
+                    onClick={handleLogout}
+                  >
+                    <IoMdPerson className="icon" />
+
+                    <span> Log out</span>
+                  </a>
+                </>
               ) : (
                 <Link
                   className="nav-link"
                   style={{ position: "absolute", right: 300 }}
                   to="/login"
                 >
-                  <IoMdPerson className={styles.icon} />
+                  <IoMdPerson className="icon" />
                   <span> Login</span>
                 </Link>
               )}
@@ -96,7 +109,7 @@ function Header() {
 
         <nav className={"navbar navbar-expand-lg"}>
           <div className="container">
-            <a className={`${styles.logo_banner} + navbar-brand`} href="#">
+            <a className="logo_banner + navbar-brand" style={{cursor:'pointer'}} href="/">
               <h2>
                 Electro<span>Shop</span>.
               </h2>
@@ -114,13 +127,13 @@ function Header() {
             </button>
 
             <div
-              className={`collapse navbar-collapse ${styles.collapse}`}
+              className="collapse navbar-collapse collapse"
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav">
                 <li className="nav-item dropdown">
                   <a
-                    className={`${styles.categories_dropdown} dropdown-toggle`}
+                    className="categories_dropdown dropdown-toggle"
                     href="#"
                     id="navbarDropdown"
                     role="button"
@@ -131,7 +144,7 @@ function Header() {
                     All Categories
                   </a>
                   <div
-                    className={`dropdown-menu + ${styles.categories_dropdown_item}`}
+                    className="dropdown-menu categories_dropdown_item"
                     aria-labelledby="navbarDropdown"
                   >
                     {categories.map((categorie, i) => {
@@ -145,15 +158,15 @@ function Header() {
                 </li>
               </ul>
               <input
-                className={`${styles.categories_input}`}
+                className="categories_input"
                 type="search"
                 placeholder="Search here"
                 aria-label="Search"
               />
-              <button className={styles.categories_btn_submit} type="submit">
+              <button className="categories_btn_submit" type="submit">
                 Search
               </button>
-              <div className={styles.order_cart}>
+              <div className="order_cart">
                 <FaHistory
                   style={{
                     fontSize: 26,
@@ -166,7 +179,7 @@ function Header() {
                   Order History
                 </p>
               </div>
-              <div className={styles.order_cart}>
+              <div className="order_cart">
                 <FaShoppingCart
                   style={{
                     fontSize: 26,

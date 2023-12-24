@@ -1,5 +1,116 @@
-.demo {
-    width: 100vw;
-    height: 500px;
-    background: orchid;
+.detail {
+    position: relative;
+    margin: 30px 0;
+}
+
+.thumbail_img {
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, .5);
+}
+
+.thumbail_img .img_preview {
+    margin: 10px 0;
+}
+
+.thumbail_img .btn_thumbail_up,
+.thumbail_img .btn_thumbail_down {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    color: rgba(0, 0, 0, .5);
+    border: 2px solid rgba(0, 0, 0, .5);
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn_thumbail_up {
+    top: -25px;
+    left: calc(50% - 25px);
+}
+
+.btn_thumbail_down {
+    left: calc(50% - 25px);
+    bottom: -25px;
+}
+
+.btn_thumbail_down:hover,
+.btn_thumbail_up:hover {
+    background: #D10024;
+    color: #fff;
+    border: 2px solid #D10024;
+}
+
+.img_preview img {
+    width: 100%;
+}
+
+.product_img {
+    position: relative;
+}
+
+.product_img img {
+    width: 100%;
+}
+
+.detail_body {
+    margin-top: 50px;
+}
+
+.detail_body h2 {
+    margin: 20px 0;
+}
+
+.product_rating {
+    position: relative;
+    margin: 15px 0px 10px;
+    height: 20px;
+}
+
+.product_rating>svg {
+    font-size: 24px;
+    margin-right: 4px;
+    background: #FFF;
+    color: #E4E7ED;
+}
+
+.product_rating>svg.rate_icon {
+    color: #ef233c;
+}
+
+.add_to_cart_btn {
+    position: relative;
+    border: 2px solid transparent;
+    height: 40px;
+    padding: 0 30px;
+    background-color: #ef233c;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 40px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.add_to_cart_btn>svg {
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+    color: #D10024;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.add_to_cart_btn:hover {
+    background-color: #FFF;
+    color: #D10024;
+    border-color: #D10024;
+    padding: 0px 30px 0px 50px;
+}
+
+.add_to_cart_btn:hover>svg {
+    opacity: 1;
+    visibility: visible;
 }

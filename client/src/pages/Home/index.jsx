@@ -1,3 +1,4 @@
+import './styles.css';
 import React from "react";
 import Collections from "../../components/Collections";
 import NewProducts from "../../components/newProducts";

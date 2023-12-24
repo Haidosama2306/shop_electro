@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import styles from "./styles.module.css";
+import "./styles.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,21 +25,21 @@ function RegisterPage() {
   },[ selector])
 
   return (
-    <div className={styles.body}>
-      <div className={styles.wrapper}>
+    <div className="body">
+      <div className="wrapper">
         <h1>Register</h1>
-        <div className={styles.input_box}>
+        <div className="input_box">
           <input type="text" onChange={e=>setData({...data, username: e.target.value})} placeholder="Username" required />
-          <FaUser className={styles.icon} />
+          <FaUser className="icon" />
         </div>
-        <div className={styles.input_box}>
+        <div className="input_box">
           <input type="password" onChange={e=>setData({...data, password: e.target.value})} placeholder="Password" required />
-          <FaLock className={styles.icon} />
+          <FaLock className="icon" />
         </div>
         <button type="submit" onClick={handleRegister}>Register</button>
-        <div className={styles.login_link}>
+        <div className="login_link">
           <p> Have an account?
-            <Link to={"/"}>
+            <Link to={"/login"}>
               <span> Login </span>
             </Link>
           </p>

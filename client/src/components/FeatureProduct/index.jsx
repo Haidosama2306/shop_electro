@@ -1,10 +1,24 @@
-import styles from "./styles.module.css";
+import "./styles.css";
+import { useNavigate } from "react-router-dom";
 import { FaStar, FaShoppingCart } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function FeatureProduct({ products }) {
+  const navigate = useNavigate();
+  
+  let isLogin = false;
+
+  if (localStorage.getItem("auth_token")) {
+    isLogin = true;
+  } else {
+    isLogin = false;
+  }
+  const handleLogin = () =>{
+    window.location.href = "/login";
+  }
+
   const settings = {
     dots: true,
     infinite: true,
@@ -24,35 +38,44 @@ function FeatureProduct({ products }) {
           products.map((product, i) => {
             return (
               <div key={product}>
-                <div className={styles.product}>
-                  <div className={`${styles.product_img}`}>
+                <div className="product">
+                  <div className="product_img">
                     <img src={product.product_img} alt={product.product_name} />
-                    <div className={`${styles.product_label}`}>
-                      <span className={`${styles.new}`}>NEW</span>
+                    <div className="product_label">
+                      <span className="new">NEW</span>
                     </div>
                   </div>
 
-                  <div className={styles.product_body}>
-                    <p className={styles.product_category}>
+                  <div className="product_body">
+                    <p className="product_category">
                       {product.category}
                     </p>
-                    <h3 className={styles.product_name}>
-                      {product.product_name}
+                    <h3 className="product_name">
+                      <a onClick={() =>{
+                      navigate(`/detail/${product.id}`)
+                     }}>{product.product_name}</a>
+                      
                     </h3>
-                    <h4 className={styles.product_price}>{product.product_price}</h4>
-                    <div className={styles.product_rating}>
-                      <FaStar className={styles.rate_icon} />
-                      <FaStar className={styles.rate_icon} />
-                      <FaStar className={styles.rate_icon} />
-                      <FaStar className={styles.rate_icon} />
-                      <FaStar className={styles.rate_icon} />
+                    <h4 className="product_price">{product.product_price}</h4>
+                    <div className="product_rating">
+                      <FaStar className="rate_icon" />
+                      <FaStar className="rate_icon" />
+                      <FaStar className="rate_icon" />
+                      <FaStar className="rate_icon" />
+                      <FaStar className="rate_icon" />
                     </div>
                   </div>
 
-                  <div className={styles.add_to_cart}>
-                    <button className={`${styles.add_to_cart_btn}`}>
+                 <div className="add_to_cart">
+                    {isLogin?(
+                      <button className="add_to_cart_btn">
                       <FaShoppingCart /> add to cart
                     </button>
+                    ):(
+                      <button className="add_to_cart_btn" onClick={handleLogin}>
+                      <FaShoppingCart /> add to cart
+                    </button>
+                    )}
                   </div>
                 </div>
               </div>
